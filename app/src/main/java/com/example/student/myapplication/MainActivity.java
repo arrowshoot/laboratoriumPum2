@@ -31,7 +31,11 @@ public class MainActivity extends AppCompatActivity {
         chnageBtnn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent toy = new Intent(MainActivity.this,ListaActivity.Class);
+                Intent toy = new Intent(MainActivity.this,ListaActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("miasto",chnageEdt.getText().toString());
+                toy.putExtra("klucz", bundle);
+                startActivity(toy);
             }
         });
     }
